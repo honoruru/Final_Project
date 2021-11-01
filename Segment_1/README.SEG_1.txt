@@ -16,3 +16,6 @@ Provisional machine - credit_risk_starter.ipynb
 
 # Database
 
+Provisional database - LoanStats_2019Q1.csv
+
+
