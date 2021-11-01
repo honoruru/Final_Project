@@ -3,6 +3,7 @@
 
 # Presentation
 See README.md at root.
+The visualization will be developed in Tableau.
 
 
 # GitHub
