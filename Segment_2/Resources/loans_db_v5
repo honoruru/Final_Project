@@ -1,0 +1,151 @@
+-- VERSION 1 --
+
+CREATE TABLE charged_off_loans (
+	KEYID int, 
+	AcctNumber int,
+	LoanID int,
+	LoanTypeFullDescription varchar,
+	LoanPurposeCode int, 
+	LoanPurposeCodeDesc varchar, 
+	LoanOriginalBalance numeric,
+	LoanBalance numeric,
+	LoanChargeOffAmount numeric,
+	LoanRecoveryAmount numeric,
+	LoanOpenDate date,
+	LoanMaturityDate date,
+	LoanChargeOffDate date,
+	LoanChargeOffTypeFullDescription varchar,
+	AccountBranchFullDescription varchar,
+	LoanBranchFullDescription varchar,
+	LoanInterestRate numeric, 
+	LoanCreditScore numeric, 
+	LoanCollateralCodeFullDescription varchar,
+	LoanDueDate date,
+	LoanLastPaymentDate date,
+	CreatedByUserFullDescription varchar,
+	LoanApprovalFullDescription varchar,
+	DealerNumberFullDescription varchar,
+	DebtRatio numeric, 
+	LoanToValue numeric, 
+	LoanDescription varchar,
+	RBL int,
+	PRIMARY KEY (KEYID)
+);
+
+
+CREATE TABLE new_loans (
+	KEYID int,
+	LoanType int,
+	LoanBranch int,
+	AcctNumber int,
+	LoanID int,
+	LoanDescription varchar,
+	LoanPurposeCode varchar,
+	LoanPurposeCodeDesc varchar,
+	LoanOpenDate date,
+	LoanApprovalCode int,
+	LoanApprovalOfficerName varchar,
+	LoanInterestRate numeric,
+	LoanOriginalBalance numeric,
+	LoanPayment numeric,
+	LoanPaymentCount int,
+	LoanDelqDays int,
+	LoanCreditScore int,
+	DebtRatio numeric,
+	LoanToValue numeric,
+	RBL int,
+	PRIMARY KEY (KEYID)
+);
+
+DROP TABLE joined_loans;
+
+SELECT * FROM joined_loans;
+
+SELECT * FROM new_loans;
+
+
+SELECT 	n.KEYID,	
+		n.LoanType,	
+		n.LoanBranch,	
+		n.AcctNumber,	
+		n.LoanID,	
+		n.LoanDescription,	
+		n.LoanPurposeCode,	
+		n.LoanPurposeCodeDesc,	
+		n.LoanOpenDate,	
+		n.LoanApprovalCode,	
+		n.LoanApprovalOfficerName,	
+		n.LoanInterestRate,	
+		n.LoanOriginalBalance,	
+		n.LoanPayment,	
+		n.LoanPaymentCount,	
+		n.LoanDelqDays,	
+		n.LoanCreditScore,	
+		n.DebtRatio,	
+		n.LoanToValue,	
+		n.RBL,
+		
+--		c.AcctNumber,
+--		c.LoanID,	
+		c.LoanTypeFullDescription,	
+--		c.LoanPurposeCode,	
+--		c.LoanPurposeCodeDesc,	
+--		c.LoanOriginalBalance,	
+		c.LoanBalance,	
+		c.LoanChargeOffAmount,	
+		c.LoanRecoveryAmount,	
+--		c.LoanOpenDate,	
+		c.LoanMaturityDate,	
+		c.LoanChargeOffDate,	
+		c.LoanChargeOffTypeFullDescription,	
+		c.AccountBranchFullDescription,	
+		c.LoanBranchFullDescription,	
+--		c.LoanInterestRate,	
+--		c.LoanCreditScore,	
+		c.LoanCollateralCodeFullDescription,	
+		c.LoanDueDate,	
+		c.LoanLastPaymentDate,	
+		c.CreatedByUserFullDescription,	
+		c.LoanApprovalFullDescription,	
+		c.DealerNumberFullDescription
+--		c.DebtRatio,	
+--		c.LoanToValue,	
+--		c.LoanDescription
+--		c.RBL,
+
+INTO joined_loans_v1
+FROM new_loans AS n
+FULL OUTER JOIN charged_off_loans AS c
+	ON (n.keyid = c.keyid)
+ORDER BY n.keyid ASC;
+
+-- VERSION 2 --
+
+SELECT 	n.KEYID,	
+		n.LoanType,	
+		n.LoanBranch,	
+		n.AcctNumber,	
+		n.LoanID,	
+		n.LoanDescription,	
+		n.LoanPurposeCode,	
+		n.LoanPurposeCodeDesc,	
+		n.LoanOpenDate,	
+		n.LoanApprovalCode,	
+		n.LoanApprovalOfficerName,	
+		n.LoanInterestRate,	
+		n.LoanOriginalBalance,	
+		n.LoanPayment,	
+		n.LoanPaymentCount,	
+		n.LoanDelqDays,	
+		n.LoanCreditScore,	
+		n.DebtRatio,	
+		n.LoanToValue,	
+		n.RBL,
+		
+		c.LoanChargeOffDate
+
+INTO joined_loans_v5
+FROM new_loans AS n
+FULL OUTER JOIN charged_off_loans AS c
+	ON (n.keyid = c.keyid)
+ORDER BY n.keyid ASC;
