@@ -1,6 +1,6 @@
 # Final_Project
 
-# Team Member - Peter Sanchez
+## Team Member - Peter Sanchez
 
 ## Project Topic - Build Model to predict whether a Loan will be charged off based on features available at loan origination. 
 
