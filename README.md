@@ -25,9 +25,10 @@ These steps were accomplished using Excel.
 2. Because I used a FULL OUTER JOIN, I had Charge-offs that had no match to the Loan Origination set.  These rows were deleted.  This resulted in a table of 22,508 loans, of which 1,175 had been charged off.
 
 These steps were accomplished in Jupyter Notebook.
-3. Removed features that were objects. Fortunately, all features were available in both numberic and string form so no relevant features were lost.
-4. Clean data where data was inconsistent or blank.  In most cases, I was able to correct or replace that data.  However, 5,865 loans had blanks for Debt Ratio.  I beleived that Debt Ratio would be significant to prediction and therefore deleted all such loans. This resulted in a table of 16,643 loans, of which 731 had been charged off.
-5. Binned certain features with low value counts. 
+
+1. Removed features that were objects. Fortunately, all features were available in both numberic and string form so no relevant features were lost.
+2. Clean data where data was inconsistent or blank.  In most cases, I was able to correct or replace that data.  However, 5,865 loans had blanks for Debt Ratio.  I beleived that Debt Ratio would be significant to prediction and therefore deleted all such loans. This resulted in a table of 16,643 loans, of which 731 had been charged off.
+3. Binned certain features with low value counts. 
 
 Machine Learning Model
 
@@ -38,5 +39,6 @@ Initial Results
 The model's initial performance was disappointing.  Its balanced accuracy score was 0.65389.  More disappointing was its recall score of 0.59.  Based on its confusion matrix, the model tended to predict a high number of false charge-offs.  I am hopeful that my decision to included all of the features available in the data is the cause of noise that is leading to its lack of performance.  I plan to use trial and error in eliminating less relevant features in hopes that the model's performance will improve. 
 
 Future Enhancements
+
 I am assessing whether I would be able to also consider environmental data, external to the applicant within the model. Examples of such data would be market interest rates, unemployment rate, or rental vacancy rate but would not be limited to these.  
 
