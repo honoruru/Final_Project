@@ -41,8 +41,19 @@ The model's initial performance was disappointing.  Its balanced accuracy score 
 
 Further Model Refinement
 
- 
+The Balanced Random Forest model was adjusted using various configurations (see Results_Tracking).  Among the changes tested were:
+1. Changing bin cutoff of loanpurposecode
+2. Changing n_estimators at various intervals
+3. Using various combinations of features based on feature_importances_
 
-Future Enhancements
-I am assessing whether I would be able to also consider environmental data, external to the applicant within the model. Examples of such data would be market interest rates, unemployment rate, or rental vacancy rate but would not be limited to these.  
+The best results was a configuration that yielded a 0.6584 balanced_accuracy_score.  More importantly it what subjectively was the optimal balance with the highest number of "True Good" loan to "False Charge-offs."
+
+User Input Version
+
+A simplified version was created that would accept user input.  In this version, scaling was eliminated so that user could make inputs which were more familiar to them in the loan origination process.  The input model functioned, and while it had the highest "False Good" count by 33, it also had the highest "True Good" count by 10.  However, some quick arithmetic shows that the interest earned on 33 loans is not enough to cover the loss of principle of 10 loans in event of charge-off, even if the loans paid for half their term.
+
+Easy Ensemble AdaBoost Classifier
+
+While the Balanced Random Forest model's performance was satisfactory, an attempt was made to use the Easy Ensemble AdaBoost Classifier.  The features used in the best Balanced Random Forest model were used.  The results were expected to be better based on the comparative performance of these models in Challenge 17.  Surprisingly, the EEAC model was outperformed by the Balanced Random Forest model.
+
 
