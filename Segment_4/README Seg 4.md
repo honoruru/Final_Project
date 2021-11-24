@@ -54,9 +54,4 @@ Easy Ensemble AdaBoost Classifier
 
 While the Balanced Random Forest model's performance was satisfactory, an attempt was made to use the Easy Ensemble AdaBoost Classifier.  The features from the best Balanced Random Forest model were used.  The results were expected to be better based on the comparative performance of these models in Challenge 17.  Surprisingly, the Easy Ensemble AdaBoost Classifier model was outperformed by the Balanced Random Forest model.
 
-## Analysis and Next Steps
-
-1. Database may not include features that may be useful in predicting charge-off such as length of employment and other life events
-2. Keeping input simple forced decision to delete some features.  Additional code for dropdowns, etc. could allow use of better performing model
-3. Model may improve with more training data
 
