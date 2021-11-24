@@ -44,11 +44,19 @@ The Balanced Random Forest model was adjusted using various configurations (see 
 2. Changing n_estimators at various intervals
 3. Using various combinations of features based on feature_importances_
 
+<<<<<<< HEAD
 The best result was a configuration that yielded a 0.6584 balanced_accuracy_score.  More importantly it produced what subjectively was the optimal balance with the highest number of "True Good" loans compared to "False Charge-offs" loans.
 
 User Input Version
 
 A simplified version was created that would accept user input.  In this version, scaling was eliminated so that user could make inputs which were more familiar to them in the loan origination process.  The input model functioned, and while it had the highest "False Good" count by 33, it also had the highest "True Good" count by 10.  Some quick arithmetic shows that the interest earned on 33 loans is not enough to cover the loss of principle of 10 loans in event of charge-off, even if the loans paid for half their term.
+=======
+The best results was a configuration that yielded a 0.6584 balanced_accuracy_score.  More importantly it produced what subjectively was the optimal balance with the highest number of "True Good" loan to "False Charge-offs."
+
+User Input Version
+
+A simplified version was created that would accept user input.  In this version, scaling was eliminated so that user could make inputs which were more familiar to them in the loan origination process.  The input model functioned, and while it had the highest "True Good" count by 33, it also had the highest "False Good" count by 10.  However, some quick arithmetic shows that the interest earned on 33 loans is not enough to cover the loss of principle of 10 loans in event of charge-off, even if the loans paid for half their term.
+>>>>>>> e8138c970bfe01921c5d20242432fde8038603be
 
 Easy Ensemble AdaBoost Classifier
 
