@@ -26,8 +26,11 @@ These steps were accomplished using Excel.
 2. Because I used a FULL OUTER JOIN, I had Charge-offs that had no match to the Loan Origination set.  These rows were deleted.  This resulted in a table of 22,508 loans, of which 1,175 had been charged off.
 
 These steps were accomplished in Jupyter Notebook.
+
 3. Removed features that were objects. Fortunately, all features were available in both numeric and string form so no relevant features were lost.
+
 4. Clean data where data was inconsistent or blank.  In most cases, I was able to correct or replace that data.  However, 5,865 loans had blanks for Debt Ratio.  I believed that Debt Ratio would be significant to prediction and therefore deleted all such loans. This resulted in a table of 16,643 loans, of which 731 had been charged off.
+
 5. Binned certain features with low value counts. 
 
 Machine Learning Model
