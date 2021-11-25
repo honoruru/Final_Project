@@ -70,3 +70,6 @@ While the Balanced Random Forest model's performance was satisfactory, an attemp
 2. Keeping input simple forced decision to delete some features.  Additional code for dropdowns, etc. could allow use of better performing model
 3. Model may improve with more training data
 
+
+[link to dashboard](https://public.tableau.com/app/profile/peter.sanchez/viz/Charged_offLoansOpen110115_103119/countbyLoanPurpose_1)
+
