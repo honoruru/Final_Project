@@ -71,5 +71,5 @@ While the Balanced Random Forest model's performance was satisfactory, an attemp
 3. Model may improve with more training data
 
 
-[link to dashboard](https://public.tableau.com/app/profile/peter.sanchez/viz/Charged_offLoansOpen110115_103119/countbyLoanPurpose_1)
+[link to Tableau](https://public.tableau.com/app/profile/peter.sanchez/viz/Charged_offLoansOpen110115_103119/countbyLoanPurpose_1)
 
